@@ -1,0 +1,19 @@
+.cont {
+    width: 30%;
+    display: inline-flex;
+    margin: 5px;
+    height: 300px;
+    background-size: cover;
+
+}
+
+.search {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.flex_container {
+    margin: auto;
+    padding: auto;
+}
+
