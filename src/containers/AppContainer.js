@@ -9,7 +9,7 @@ const mapStateToProps = (store) => ({
 
 const mapDispatchToProps = {
     searchTextChangedAction: SearchActions.searchTextChangedAction,
-    loadPhotosAction: SearchActions.loadPhotosAction
+    loadCrewMembersAction: SearchActions.loadCrewMembersAction
 };
 
 export default connect(

@@ -1,55 +1,48 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import Picture from "./Picture";
+import CrewMember from './CrewMember';
+import logo from '../logo.png'
 
 
 class App extends Component {
 
-     componentDidMount(){
-     this.props.loadPhotosAction();
+    componentDidMount(){
+     this.props.loadCrewMembersAction();
     }
 
-
-
-
-    renderPictures = () => (
-        this.props.photos.map((post, index) => (
-            <Picture key={index} imageUrl={`https://farm${post.farm}.staticflickr.com/${post.server}/${post.id}_${post.secret}.jpg`}/>
+    renderCrewMembers = (hiringStatus) => (
+        this.props.crewMembers.filter(item => item.hiringStatus === hiringStatus)
+          .map((props, index) => (
+            <CrewMember
+                {...props}
+                key={index}
+            />
         ))
     );
 
     render() {
         return (
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h1 className="App-title">OpenOceanStudio: Crew Applications</h1>
+            </header>
             <div className="container">
-                {/*<Navbar searchText={this.props.content} onSearchChanged={(e) => {*/}
-                {/*console.log(e);*/}
-                {/*this.props.searchTextChangedAction(e.target.value);*/}
-                {/*this.props.loadPhotosAction(e.target.value);*/}
-
-                {/*}}/>*/}
-
-                <div className="row ">
-                    <nav className='nav'>
-                        <div className='input-group mb-3 search'>
-                            <input
-                                onChange={(e) => {
-                                    console.log(e);
-                                    // this.props.searchTextChangedAction(e.target.value);
-                                    this.props.loadPhotosAction(e.target.value);
-                                }}
-                            />
-
-                            <div className="input-group-append">
-                                <span className="input-group-text">Search</span>
-                            </div>
-                        </div>
-                    </nav>
-                    <div className='flex_container'>
-                        {this.renderPictures()}
-                    </div>
-                </div>
+               <div className="section">
+                  <h1>Applied</h1>
+                  {this.renderCrewMembers('applied')}
+               </div>
+              <div className="section">
+                <h1>Interviewing</h1>
+                {this.renderCrewMembers('interviewing')}
+              </div>
+              <div className="section">
+                <h1>Hired</h1>
+                {this.renderCrewMembers('hired')}
+              </div>
             </div>
+          </div>
         );
     }
 }

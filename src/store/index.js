@@ -9,8 +9,6 @@ const store = createStore(
     middleware
 );
 
-// TODO: ...
-
 console.log(store.getState());
 
 export default store;

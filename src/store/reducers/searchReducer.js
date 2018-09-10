@@ -2,7 +2,7 @@ import * as SearchActions from '../actions/searchActions';
 
 const initState = {
     content: '',
-    photos: []
+    crewMembers: []
 };
 
 export default  (state = initState, action) => {
@@ -13,12 +13,12 @@ export default  (state = initState, action) => {
                 content: action.payload.text,
 
             };
-        case SearchActions.ACTION_SEARCH_PHOTOS_LOAD_SUCCESS:
+        case SearchActions.ACTION_SEARCH_CREW_MEMBERS_LOAD_SUCCESS:
             return {
                 ...state,
                 ...action.payload
             };
         default:
-            return state;
     }
 };
+

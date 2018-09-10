@@ -1,19 +1,55 @@
-.cont {
-    width: 30%;
-    display: inline-flex;
-    margin: 5px;
-    height: 300px;
-    background-size: cover;
-
+.App-logo {
+    height: 80px;
 }
 
-.search {
-    margin-top: 20px;
-    margin-left: 5px;
+.App-header {
+    background-color: #06679a;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
-.flex_container {
-    margin: auto;
-    padding: auto;
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.container {
+    display: flex;
+}
+
+.section {
+    margin-top: 30px;
+    width: 500px;
+}
+
+.section h1 {
+    padding-left: 20px;
+}
+
+.crew-member {
+    width: 450px;
+    height: 150px;
+    display: flex;
+    text-transform: uppercase;
+    margin: 20px;
+    padding: 20px;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+}
+
+.crew-member img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
